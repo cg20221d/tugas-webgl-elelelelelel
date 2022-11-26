@@ -358,30 +358,6 @@ function render() {
     gl.clearColor(0.125, 0.125, 0.15, 1);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    var modelM = mat4.create(); // Membuat matriks identitas
-
-    mat4.rotateY(
-        modelM, modelM, thetaY
-    );
-
-    gl.uniformMatrix4fv(uModel, false, modelM);
-    gl.uniformMatrix4fv(uView, false, view);
-    gl.uniformMatrix4fv(uProjection, false, perspective);
-
-    draw(objects[0].vertices, objects[0].indices, 0, objects[0].length, objects[0].type);
-
-    var modelA = mat4.create(); // Membuat matriks identitas
-    mat4.rotateX(
-        modelA, modelA, thetaX
-    );
-
-    gl.uniformMatrix4fv(uModel, false, modelA);
-    gl.uniformMatrix4fv(uView, false, view);
-    gl.uniformMatrix4fv(uProjection, false, perspective);
-
-    draw(objects[1].vertices, objects[1].indices, 0, objects[1].length, objects[1].type);
-    
-
     scale6();
     translate5();
     requestAnimationFrame(render);
