@@ -6,9 +6,98 @@ function main() {
   
     // Koordinat titik-titik
     var verticesB = [
+    //Depan vertikal 4,22,37
+    -1.3,-1.5,  0,      1, 1, 1,   // Index:  0 
+    -1,  -1.5,  0,      1, 1, 1,   // Index:  1 
+    -1,  2,  0,         1, 1, 1,   // Index:  2 
+    -1.3, 2, 0,         1, 1, 1,   // Index:  3
+    //Depan kotak bawah
+    -1,-1.2,  0,      1, 1, 1,   // Index:  4 
+    0.4,-1.2,  0,      1, 1, 1,   // Index:  5 
+    0.4,-1.5,  0,      1, 1, 1,   // Index:  6
+    0.2,-1.5,  0,      1, 1, 1,   // Index:  7 
+    0.4, 0.5,  0,      1, 1, 1,   // Index:  8
+    0.2, 0.5,  0,      1, 1, 1,   // Index:  9
+    0.2, 0.2,  0,      1, 1, 1,   // Index:  10
+    -1, 0.5,  0,      1, 1, 1,   // Index:  11
+    -1, 0.2,  0,      1, 1, 1,   // Index:  12
+    //Depan kotak atas
+    0, 0.5,  0,      1, 1, 1,   // Index:  13
+    0, 2,  0,      1, 1, 1,   // Index:  14
+    0.2, 2,  0,      1, 1, 1,   // Index:  15
+    0, 1.7,  0,      1, 1, 1,   // Index:  16
+    -1, 1.7,  0,         1, 1, 1,   // Index:  17
+    //Belakang
+    -1.3,-1.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  18 
+    -1,  -1.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  19 
+    -1,  2,  -0.5,         0.5, 0.5, 0.5,   // Index:  20 
+    -1.3, 2, -0.5,         0.5, 0.5, 0.5,   // Index:  21
+    //Depan kotak bawah
+    -1,-1.2,  -0.5,      0.5, 0.5, 0.5,   // Index:  22 
+    0.4,-1.2,  -0.5,      0.5, 0.5, 0.5,   // Index:  23 
+    0.4,-1.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  24
+    0.2,-1.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  25
+    0.4, 0.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  26
+    0.2, 0.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  27
+    0.2, 0.2,  -0.5,      0.5, 0.5, 0.5,   // Index:  28
+    -1, 0.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  29
+    -1, 0.2,  -0.5,      0.5, 0.5, 0.5,   // Index:  30
+    //Depan kotak atas
+    0, 0.5,  -0.5,      0.5, 0.5, 0.5,   // Index:  31
+    0, 2,  -0.5,      0.5, 0.5, 0.5,   // Index:  32
+    0.2, 2,  -0.5,      0.5, 0.5, 0.5,   // Index:  33
+    0, 1.7,  -0.5,      0.5, 0.5, 0.5,   // Index:  34
+    -1, 1.7,  -0.5,         0.5, 0.5, 0.5,   // Index:  35
+
+    0.2,-1.2,  0,      1, 1, 1,   // Index:  36
+    0.2,-1.2,  -0.5,      0.5, 0.5, 0.5,   // Index: 37
+    0, 1.7,  0,      1, 1, 1,   // Index:  38
+
+
+
+  
     ];
   
     var indicesB = [
+        //Depan vertikal
+        0, 1, 2, 0,2,3,
+        //Depan kotak bawah
+        1,4,5, 5,1,6,
+        6,7,8, 7,8,9,
+        9,10,11, 10,11,12,
+        //Depan kotak atas
+        9,13,14, 9,14,15,
+        14,16,2, 16,2,17,
+        //Belakang
+        18,19,20, 18,20,21,
+        
+        19,22,23, 23,19,24,
+        24,25,26, 25,26,27,
+        27,28,29, 28,29,30,
+        
+        27,31,32, 27,32,33,
+        32,34,20, 34,20,35,
+        //Tengah kiri
+        0,18,3, 18,3,21,
+        //bawah
+        0,18,6, 18,6,24,
+        //atas
+        3,21,15, 21,15,33,
+        //kanan atas
+        15,33,9, 27,9,33,
+        8,26,9, 27,26,9,
+        6,24,8, 26,24,8,
+        //kotak bawah
+        4,22,36, 22,36,37,
+        12,4,22, 30,12,22,
+        11,29,17, 29,17,35,
+        17,35,16, 35,34,16,
+        11,29,9, 27,29,9,
+        10,28,12, 30,28,12,
+        7,25,10, 10,28,25,
+        38,34,13, 31,13,34
+
+
     ];
     var verticesY = [
         
@@ -358,8 +447,31 @@ function render() {
     gl.clearColor(0.125, 0.125, 0.15, 1);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    scale6();
-    translate5();
+    var modelB = mat4.create(); // Membuat matriks identitas
+
+    mat4.rotateY(
+        modelB, modelB, thetaY
+    );
+    gl.uniformMatrix4fv(uModel, false, modelB);
+    gl.uniformMatrix4fv(uView, false, view);
+    gl.uniformMatrix4fv(uProjection, false, perspective);
+
+    draw(objects[0].vertices, objects[0].indices, 0, objects[0].length, objects[0].type);
+
+    var modelY = mat4.create(); // Membuat matriks identitas
+    mat4.rotateX(
+        modelY, modelY, thetaX
+    );
+
+    gl.uniformMatrix4fv(uModel, false, modelY);
+    gl.uniformMatrix4fv(uView, false, view);
+    gl.uniformMatrix4fv(uProjection, false, perspective);
+
+    draw(objects[1].vertices, objects[1].indices, 0, objects[1].length, objects[1].type);
+    
+
+    //scale6();
+    //translate5();
     requestAnimationFrame(render);
 }
 requestAnimationFrame(render);
