@@ -100,10 +100,57 @@ function main() {
 
     ];
     var verticesY = [
-        
+        //DEPAN
+        //kiri
+        -3.5,  2,    0,    1, 0, 0,  // Index:  0  kanan
+        -3.9,  2,    0,    1, 0, 0,  // Index:  1  kiri
+        -2.7,  0.2,  0,    1, 0, 0,  // Index:  2 
+        -2.7,  0.7,  0,    1, 0, 0,  // Index:  3
+        //tengah
+        -3,   -1.5,  0,    1, 0, 0,  // Index:  4 bawah kiri
+        -2.7, -1.5,  0,    1, 0, 0,  // Index:  5 bawah kanan
+        -2.7,  0.64, 0,    1, 0, 0,  // Index:  6 atas kanan
+        -3,    0.64, 0,    1, 0, 0,  // Index:  7 atas kiri
+        //kanan
+        -2.2,  2,    0,    1, 0, 0,  // Index:  8 kiri
+        -1.8,  2,    0,    1, 0, 0,  // Index:  9 kanan
+        -3,    0.2,  0,    1, 0, 0,  // Index:  10 
+        -3,    0.7,  0,    1, 0, 0,  // Index:  11
+        //BELAKANG
+        //kiri
+        -3.5,  2,    -0.5,    0, 1, 1,  // Index:  12 kanan
+        -3.9,  2,    -0.5,    0, 1, 1,  // Index:  13 kiri
+        -2.7,  0.2,  -0.5,    0, 1, 1,  // Index:  14 
+        -2.7,  0.7,  -0.5,    0, 1, 1,  // Index:  15
+        //tengah
+        -3,   -1.5,  -0.5,    0, 1, 1,  // Index:  16 bawah kiri
+        -2.7, -1.5,  -0.5,    0, 1, 1,  // Index:  17 bawah kanan
+        -2.7,  0.64, -0.5,    0, 1, 1,  // Index:  18 atas kanan
+        -3,    0.64, -0.5,    0, 1, 1,  // Index:  19 atas kiri
+        //kanan
+        -2.2,  2,    -0.5,    0, 1, 1,  // Index:  20 kanan
+        -1.8,  2,    -0.5,    0, 1, 1,  // Index:  21 kiri
+        -3,    0.2,  -0.5,    0, 1, 1,  // Index:  22 
+        -3,    0.7,  -0.5,    0, 1, 1,  // Index:  23
     ];
   
     var indicesY = [
+
+        0, 1, 2,  0, 2,3,   //kiri
+        4, 5, 6, 4,6,7,     //tengah
+        8,9,10, 8,10,11,    //kanan
+        12,13,14, 12,14,15,
+        16,17,18, 16,18,19,
+        20,21,22, 20,22,23,
+        0,1,12, 1,12,13,
+        8,9,20, 20,21,9,
+        0,12,6, 6,12,18,
+        8,20,7, 20,19,7,
+        1,13,7, 13,7,19,
+        9,21,18, 9,18,6,
+        16,19,4, 7,4,19,
+        5,6,17, 18,6,17,
+        4,5,16, 16,17,5
     ];
   
     var vertices5 = [
@@ -398,7 +445,6 @@ const translate5 = () =>{
   }
 
   const scale6 = () =>{
-    // Angka 6 Scaling
     var model6 = mat4.create(); 
 
     if (DeltaScale >= 2 || DeltaScale <= -0.5) {
@@ -415,7 +461,30 @@ const translate5 = () =>{
 
     draw(objects[3].vertices, objects[3].indices, 0, objects[3].length, objects[3].type);
   }
+  const rotateY = () =>{
+    var modelY = mat4.create(); // Membuat matriks identitas
+    mat4.rotateX(
+        modelY, modelY, thetaX
+    );
 
+    gl.uniformMatrix4fv(uModel, false, modelY);
+    gl.uniformMatrix4fv(uView, false, view);
+    gl.uniformMatrix4fv(uProjection, false, perspective);
+
+    draw(objects[1].vertices, objects[1].indices, 0, objects[1].length, objects[1].type);
+  }
+  const rotateB = () =>{
+    var modelB = mat4.create(); // Membuat matriks identitas
+
+    mat4.rotateY(
+        modelB, modelB, thetaY
+    );
+    gl.uniformMatrix4fv(uModel, false, modelB);
+    gl.uniformMatrix4fv(uView, false, view);
+    gl.uniformMatrix4fv(uProjection, false, perspective);
+
+    draw(objects[0].vertices, objects[0].indices, 0, objects[0].length, objects[0].type);
+  }
 
 function onKeydown(event) {
     if (event.keyCode == 37) { // Kiri
@@ -447,31 +516,10 @@ function render() {
     gl.clearColor(0.125, 0.125, 0.15, 1);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    var modelB = mat4.create(); // Membuat matriks identitas
-
-    mat4.rotateY(
-        modelB, modelB, thetaY
-    );
-    gl.uniformMatrix4fv(uModel, false, modelB);
-    gl.uniformMatrix4fv(uView, false, view);
-    gl.uniformMatrix4fv(uProjection, false, perspective);
-
-    draw(objects[0].vertices, objects[0].indices, 0, objects[0].length, objects[0].type);
-
-    var modelY = mat4.create(); // Membuat matriks identitas
-    mat4.rotateX(
-        modelY, modelY, thetaX
-    );
-
-    gl.uniformMatrix4fv(uModel, false, modelY);
-    gl.uniformMatrix4fv(uView, false, view);
-    gl.uniformMatrix4fv(uProjection, false, perspective);
-
-    draw(objects[1].vertices, objects[1].indices, 0, objects[1].length, objects[1].type);
-    
-
-    //scale6();
-    //translate5();
+    scale6();
+    translate5();
+    rotateY();
+    rotateB();
     requestAnimationFrame(render);
 }
 requestAnimationFrame(render);
