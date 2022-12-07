@@ -6,35 +6,35 @@ function main() {
   
     // Koordinat titik-titik
     var verticesB = [
-        -0.6, 0, -0.6,     1, 1, 1,   // Index:  0    
-         0, 0, -0.6,       1, 1, 1,   // Index:  1
-         0,  1, -0.6,      1, 1, 1,   // Index:  2
-        -0.6,  1, -0.6,    1, 1, 1,   // Index:  3
+        -0.6, 0, -0.6,     1, 1, 1,  0, 0, -1, // Index:  0    
+         0, 0, -0.6,       1, 1, 1,  0, 0, -1, // Index:  1
+         0,  1, -0.6,      1, 1, 1,  0, 0, -1, // Index:  2
+        -0.6,  1, -0.6,    1, 1, 1,  0, 0, -1, // Index:  3
         // Face B       // Yellow
-        -0.6, 0,  0,   1, 1, 1,   // Index:  4
-         0, 0,  0,     1, 1, 1,    // Index:  5
-         0,  1,  0,     1, 1, 1,   // Index:  6
-        -0.6,  1,  0,   1, 1, 1,   // Index:  7
+        -0.6, 0,  0,   1, 1, 1,   0, 0, 1,// Index:  4
+         0, 0,  0,     1, 1, 1,    0, 0, 1,// Index:  5
+         0,  1,  0,     1, 1, 1,   0, 0, 1,// Index:  6
+        -0.6,  1,  0,   1, 1, 1,   0, 0, 1,// Index:  7
         // Face C       // Green
-        -0.6, 0, -0.6,     1, 1, 1,   // Index:  8
-        -0.6,  1, -0.6,    1, 1, 1,  // Index:  9
-        -0.6,  1,  0,    1, 1, 1,   // Index: 10
-        -0.6, 0,  0,     1, 1, 1,  // Index: 11
+        -0.6, 0, -0.6,     1, 1, 1, -1, 0, 0,  // Index:  8
+        -0.6,  1, -0.6,    1, 1, 1,  -1, 0, 0,// Index:  9
+        -0.6,  1,  0,    1, 1, 1,   -1, 0, 0,// Index: 10
+        -0.6, 0,  0,     1, 1, 1, -1, 0, 0,// Index: 11
         // Face D       // Blue
-         0, 0, -0.6,       1, 1, 1,    // Index: 12
-         0,  1, -0.6,      1, 1, 1,    // Index: 13
-         0,  1,  0,       1, 1, 1,    // Index: 14
-         0, 0,  0,        1, 1, 1,    // Index: 15
+         0, 0, -0.6,       1, 1, 1, 1, 0, 0,   // Index: 12
+         0,  1, -0.6,      1, 1, 1, 1, 0, 0,   // Index: 13
+         0,  1,  0,       1, 1, 1,  1, 0, 0,  // Index: 14
+         0, 0,  0,        1, 1, 1,  1, 0, 0,  // Index: 15
         // Face E       // Orange
-        -0.6, 0, -0.6,      1, 1, 1,   // Index: 16
-        -0., 0,  0,      1, 1, 1,   // Index: 17
-         0, 0,  0,        1, 1, 1,   // Index: 18
-         0, 0, -0.6,        1, 1, 1,  // Index: 19
+        -0.6, 0, -0.6,      1, 1, 1, 0, -1, 0,  // Index: 16
+        -0., 0,  0,      1, 1, 1,   0, -1, 0, // Index: 17
+         0, 0,  0,        1, 1, 1,  0, -1, 0, // Index: 18
+         0, 0, -0.6,        1, 1, 1, 0, -1, 0, // Index: 19
         // Face F       // White
-        -0.6,  1, -0.6,     1, 1, 1,    // Index: 20
-        -0.6,  1,  0,     1, 1, 1,   // Index: 21
-         0,  1,  0,       1, 1, 1,    // Index: 22
-         0,  1, -0.6,       1, 1, 1,    // Index: 23
+        -0.6,  1, -0.6,     1, 1, 1, 0, 1, 0,   // Index: 20
+        -0.6,  1,  0,     1, 1, 1,  0, 1, 0, // Index: 21
+         0,  1,  0,       1, 1, 1,   0, 1, 0, // Index: 22
+         0,  1, -0.6,       1, 1, 1, 0, 1, 0,   // Index: 23
 
 
 
@@ -52,36 +52,36 @@ function main() {
     var verticesY = [
         //DEPAN
         //kiri
-        -3.5,  2,    0,    1, 0, 0,  // Index:  0  kanan
-        -3.9,  2,    0,    1, 0, 0,  // Index:  1  kiri
-        -2.7,  0.2,  0,    1, 0, 0,  // Index:  2 
-        -2.7,  0.7,  0,    1, 0, 0,  // Index:  3
+        -3.5,  2,    0,    1, 0, 0,  0, 0, -1,// Index:  0  kanan
+        -3.9,  2,    0,    1, 0, 0,  0, 0, -1,// Index:  1  kiri
+        -2.7,  0.2,  0,    1, 0, 0,  0, 0, -1,// Index:  2 
+        -2.7,  0.7,  0,    1, 0, 0,  0, 0, -1,// Index:  3
         //tengah
-        -3,   -1.5,  0,    1, 0, 0,  // Index:  4 bawah kiri
-        -2.7, -1.5,  0,    1, 0, 0,  // Index:  5 bawah kanan
-        -2.7,  0.64, 0,    1, 0, 0,  // Index:  6 atas kanan
-        -3,    0.64, 0,    1, 0, 0,  // Index:  7 atas kiri
+        -3,   -1.5,  0,    1, 0, 0,  0, 0, -1,// Index:  4 bawah kiri
+        -2.7, -1.5,  0,    1, 0, 0,  0, 0, -1,// Index:  5 bawah kanan
+        -2.7,  0.64, 0,    1, 0, 0,  0, 0, -1,// Index:  6 atas kanan
+        -3,    0.64, 0,    1, 0, 0,  0, 0, -1,// Index:  7 atas kiri
         //kanan
-        -2.2,  2,    0,    1, 0, 0,  // Index:  8 kiri
-        -1.8,  2,    0,    1, 0, 0,  // Index:  9 kanan
-        -3,    0.2,  0,    1, 0, 0,  // Index:  10 
-        -3,    0.7,  0,    1, 0, 0,  // Index:  11
+        -2.2,  2,    0,    1, 0, 0,  0, 0, -1,// Index:  8 kiri
+        -1.8,  2,    0,    1, 0, 0,  0, 0, -1,// Index:  9 kanan
+        -3,    0.2,  0,    1, 0, 0,  0, 0, -1,// Index:  10 
+        -3,    0.7,  0,    1, 0, 0,  0, 0, -1,// Index:  11
         //BELAKANG
         //kiri
-        -3.5,  2,    -0.5,    0, 1, 1,  // Index:  12 kanan
-        -3.9,  2,    -0.5,    0, 1, 1,  // Index:  13 kiri
-        -2.7,  0.2,  -0.5,    0, 1, 1,  // Index:  14 
-        -2.7,  0.7,  -0.5,    0, 1, 1,  // Index:  15
+        -3.5,  2,    -0.5,    0, 1, 1,  0, 0, -1,// Index:  12 kanan
+        -3.9,  2,    -0.5,    0, 1, 1,  0, 0, -1,// Index:  13 kiri
+        -2.7,  0.2,  -0.5,    0, 1, 1,  0, 0, -1,// Index:  14 
+        -2.7,  0.7,  -0.5,    0, 1, 1,  0, 0, -1,// Index:  15
         //tengah
-        -3,   -1.5,  -0.5,    0, 1, 1,  // Index:  16 bawah kiri
-        -2.7, -1.5,  -0.5,    0, 1, 1,  // Index:  17 bawah kanan
-        -2.7,  0.64, -0.5,    0, 1, 1,  // Index:  18 atas kanan
-        -3,    0.64, -0.5,    0, 1, 1,  // Index:  19 atas kiri
+        -3,   -1.5,  -0.5,    0, 1, 1,  0, 0, -1,// Index:  16 bawah kiri
+        -2.7, -1.5,  -0.5,    0, 1, 1,  0, 0, -1,// Index:  17 bawah kanan
+        -2.7,  0.64, -0.5,    0, 1, 1,  0, 0, -1,// Index:  18 atas kanan
+        -3,    0.64, -0.5,    0, 1, 1,  0, 0, -1,// Index:  19 atas kiri
         //kanan
-        -2.2,  2,    -0.5,    0, 1, 1,  // Index:  20 kanan
-        -1.8,  2,    -0.5,    0, 1, 1,  // Index:  21 kiri
-        -3,    0.2,  -0.5,    0, 1, 1,  // Index:  22 
-        -3,    0.7,  -0.5,    0, 1, 1,  // Index:  23
+        -2.2,  2,    -0.5,    0, 1, 1,  0, 0, -1,// Index:  20 kanan
+        -1.8,  2,    -0.5,    0, 1, 1,  0, 0, -1,// Index:  21 kiri
+        -3,    0.2,  -0.5,    0, 1, 1,  0, 0, -1,// Index:  22 
+        -3,    0.7,  -0.5,    0, 1, 1,  0, 0, -1,// Index:  23
     ];
   
     var indicesY = [
@@ -105,31 +105,31 @@ function main() {
   
     var vertices5 = [
         //Depan
-        -4,   -1,  0,      0, 0, 2,   // Index:  0 
-        -2.8, -1,  0,      0, 0, 2,   // Index:  1 
-        -2.8,  0,  0,      0, 0, 2,   // Index:  2 
-        -4,    0,  0,      0, 0, 2,   // Index:  3 
-        -4,    2,  0,      0, 0, 2,   // Index:  4 
-        -2.5,  2,  0,      0, 0, 2,   // Index:  5 
-        -2.5,  1.5,  0,    0, 0, 2,   // Index:  6 
-        -3.7,  1.5,  0,    0, 0, 2,   // Index:  7 
-        -3.7,  0.5,  0,    0, 0, 2,   // Index:  8 
-        -2.5,  0.5,  0,    0, 0, 2,   // Index:  9 
-        -2.5, -1.5,  0,    0, 0, 2,   // Index:  10
-        -4, -1.5,  0,      0, 0, 2,   // Index:  11
+        -4,   -1,  0,      0, 0, 2,   0, 0, -1,// Index:  0 
+        -2.8, -1,  0,      0, 0, 2,  0, 0, -1, // Index:  1 
+        -2.8,  0,  0,      0, 0, 2,  0, 0, -1, // Index:  2 
+        -4,    0,  0,      0, 0, 2,  0, 0, -1, // Index:  3 
+        -4,    2,  0,      0, 0, 2,  0, 0, -1, // Index:  4 
+        -2.5,  2,  0,      0, 0, 2,  0, 0, -1, // Index:  5 
+        -2.5,  1.5,  0,    0, 0, 2,  0, 0, -1, // Index:  6 
+        -3.7,  1.5,  0,    0, 0, 2,  0, 0, -1, // Index:  7 
+        -3.7,  0.5,  0,    0, 0, 2,  0, 0, -1, // Index:  8 
+        -2.5,  0.5,  0,    0, 0, 2,  0, 0, -1, // Index:  9 
+        -2.5, -1.5,  0,    0, 0, 2,  0, 0, -1, // Index:  10
+        -4, -1.5,  0,      0, 0, 2,  0, 0, -1, // Index:  11
         //Belakang x + 0,5 y +0,3
-        -3.5, -0.7,  -0.5,    0, 0, 2,   // Index:  12 
-        -2.3, -0.7,  -0.5,    0, 0, 2,   // Index:  13 
-        -2.3,  0.3,  -0.5,    0, 0, 2,   // Index:  14 
-        -3.5,  0.3,  -0.5,      0, 0, 2,   // Index:  15 
-        -3.5,  2.3,  -0.5,      0, 0, 2,   // Index:  16 
-        -2,    2.3,  -0.5,      0, 0, 2,   // Index:  17 
-        -2,    1.8,  -0.5,    0, 0, 2,   // Index:  18 
-        -3.2,  1.8,  -0.5,    0, 0, 2,   // Index:  19 
-        -3.2,  0.8,  -0.5,    0, 0, 2,   // Index:  20 
-        -2,  0.8,  -0.5,     0, 0, 2,   // Index:  21
-        -2, -1.2,  -0.5,    0,0, 2,   // Index:  21
-        -3.5, -1.2,  -0.5,  0, 0, 2,   // Index:  23
+        -3.5, -0.7,  -0.5,    0, 0, 2,  0, 0, -1, // Index:  12 
+        -2.3, -0.7,  -0.5,    0, 0, 2,  0, 0, -1, // Index:  13 
+        -2.3,  0.3,  -0.5,    0, 0, 2,  0, 0, -1, // Index:  14 
+        -3.5,  0.3,  -0.5,      0, 0, 2, 0, 0, -1,  // Index:  15 
+        -3.5,  2.3,  -0.5,      0, 0, 2, 0, 0, -1,  // Index:  16 
+        -2,    2.3,  -0.5,      0, 0, 2, 0, 0, -1,  // Index:  17 
+        -2,    1.8,  -0.5,    0, 0, 2,   0, 0, -1,// Index:  18 
+        -3.2,  1.8,  -0.5,    0, 0, 2,   0, 0, -1,// Index:  19 
+        -3.2,  0.8,  -0.5,    0, 0, 2,  0, 0, -1, // Index:  20 
+        -2,  0.8,  -0.5,     0, 0, 2,   0, 0, -1,// Index:  21
+        -2, -1.2,  -0.5,    0,0, 2,   0, 0, -1,// Index:  21
+        -3.5, -1.2,  -0.5,  0, 0, 2,  0, 0, -1, // Index:  23
   
     ];
   
@@ -273,45 +273,71 @@ function main() {
     ]
   
         // Vertex shader
-    var vertexShaderCode = `
-    attribute vec3 aPosition; // Karena 3d, kita ubah vec2 jadi vec3
-    attribute vec3 aColor; // Vertex Color
-    uniform mat4 uModel; // model = world
-    uniform mat4 uView;
-    uniform mat4 uProjection;
-    varying vec3 vColor; // Fragment Color
-    void main() {
-        gl_Position = uProjection * uView * uModel * vec4(aPosition, 1.0);
-        vColor = aColor;
-    }
-`;
-var vertexShaderObject = gl.createShader(gl.VERTEX_SHADER);
-gl.shaderSource(vertexShaderObject, vertexShaderCode);
-gl.compileShader(vertexShaderObject);
-
-// Fragment shader
-var fragmentShaderCode = `
-    precision mediump float;
-    varying vec3 vColor;
-    uniform vec3 uAmbientConstant;
-    uniform float uAmbientIntensity;
-    void main() {
-        vec3 ambient = uAmbientConstant * uAmbientIntensity;
-        vec3 phong = ambient;
-        gl_FragColor = vec4(phong * vColor, 1.0);
-
-    }
-`;
-var fragmentShaderObject = gl.createShader(gl.FRAGMENT_SHADER);
-gl.shaderSource(fragmentShaderObject, fragmentShaderCode);
-gl.compileShader(fragmentShaderObject);
-
-// Shader program
-var shaderProgram = gl.createProgram(); // Wadah dari executable (.exe)
-gl.attachShader(shaderProgram, vertexShaderObject);
-gl.attachShader(shaderProgram, fragmentShaderObject);
-gl.linkProgram(shaderProgram);
-gl.useProgram(shaderProgram);
+        var vertexShaderCode =  `
+        attribute vec3 aPosition;   // Sebelumnya vec2, makanya tidak tergambar kubus :D
+        attribute vec3 aColor;
+        attribute vec3 aNormal;
+        uniform mat4 uModel;
+        uniform mat4 uView;
+        uniform mat4 uProjection;
+        varying vec3 vPosition;
+        varying vec3 vColor;
+        varying vec3 vNormal;
+        void main() {
+            gl_Position = uProjection * uView * uModel * vec4(aPosition, 1.0);
+            vColor = aColor;
+            vNormal = aNormal;
+            vPosition = (uModel * vec4(aPosition, 1.0)).xyz;
+        }
+        `;
+        var vertexShaderObject = gl.createShader(gl.VERTEX_SHADER);
+        gl.shaderSource(vertexShaderObject, vertexShaderCode);
+        gl.compileShader(vertexShaderObject);   // sampai sini sudah jadi .o
+    
+        // Fragment shader
+        var fragmentShaderCode = `
+        precision mediump float;
+        varying vec3 vColor;
+        uniform vec3 uLightConstant;        // merepresentasikan warna sumber cahaya
+        uniform float uAmbientIntensity;    // merepresentasikan intensitas cahaya sekitar
+        varying vec3 vNormal;
+        varying vec3 vPosition;             // titik fragmen
+        uniform vec3 uLightPosition;        // titik lokasi sumber cahaya
+        uniform vec3 uViewerPosition;       // titik lokasi mata atau kamera pengamat
+        uniform mat3 uNormalModel;
+        void main() {
+            vec3 ambient = uLightConstant * uAmbientIntensity;
+            vec3 lightRay = vPosition - uLightPosition;
+            vec3 normalizedLight = normalize(-lightRay);
+            vec3 normalizedNormal = normalize(uNormalModel * vNormal);
+            float cosTheta = dot(normalizedNormal, normalizedLight);
+            vec3 diffuse = vec3(0.0, 0.0, 0.0);
+            if (cosTheta > 0.0) {
+                float diffuseIntensity = cosTheta;
+                diffuse = uLightConstant * diffuseIntensity;
+            }
+            vec3 normalizedReflector = normalize(reflect(lightRay, normalizedNormal));
+            vec3 normalizedViewer = normalize(uViewerPosition - vPosition);
+            float cosPhi = dot(normalizedReflector, normalizedViewer);
+            vec3 specular = vec3(0.0, 0.0, 0.0);
+            if (cosPhi > 0.0) {
+                float shininessConstant = 100.0;    // batas minimum spesifikasi spekular untuk materi logam
+                float specularIntensity = pow(cosPhi, shininessConstant);
+                specular = uLightConstant * specularIntensity;
+            }
+            vec3 phong = ambient + diffuse + specular;
+            gl_FragColor = vec4(phong * vColor, 1.0);
+        }
+        `;
+        var fragmentShaderObject = gl.createShader(gl.FRAGMENT_SHADER);
+        gl.shaderSource(fragmentShaderObject, fragmentShaderCode);
+        gl.compileShader(fragmentShaderObject);   // sampai sini sudah jadi .o
+    
+        var shaderProgram = gl.createProgram(); // wadah dari executable (.exe)
+        gl.attachShader(shaderProgram, vertexShaderObject);
+        gl.attachShader(shaderProgram, fragmentShaderObject);
+        gl.linkProgram(shaderProgram);
+        gl.useProgram(shaderProgram);
 
 
 
@@ -319,15 +345,14 @@ gl.useProgram(shaderProgram);
 var uModel = gl.getUniformLocation(shaderProgram, "uModel");
 
 // View
-var cameraX = 0.0;
-var cameraZ = 7.5;
+var camera = [0.0, 0.0, 5.0];
 var uView = gl.getUniformLocation(shaderProgram, "uView");
 var view = mat4.create();
 
 mat4.lookAt(
     view,
-    [cameraX, 0.0, cameraZ], // Lokasi the eye or the camera
-    [cameraX, 0.0, -10],    // The point where the camera look at
+    camera,                         // lokasi mata atau kamera pengamat
+    [camera[0], 0.0, -10.0],        // titik ke mana kamera mengamat
     [0.0, 1.0, 0.0]
 );
 
@@ -350,20 +375,28 @@ function draw(vertices, indices, start = 0, end, glType) {
     //  untuk setiap verteks yang sedang diproses
     var aPosition = gl.getAttribLocation(shaderProgram, "aPosition");
     gl.vertexAttribPointer(aPosition, 3, gl.FLOAT, false, 
-        6 * Float32Array.BYTES_PER_ELEMENT, 
+        9 * Float32Array.BYTES_PER_ELEMENT, 
         0);
     gl.enableVertexAttribArray(aPosition);
-
     var aColor = gl.getAttribLocation(shaderProgram, "aColor");
     gl.vertexAttribPointer(aColor, 3, gl.FLOAT, false, 
-        6 * Float32Array.BYTES_PER_ELEMENT, 
+        9 * Float32Array.BYTES_PER_ELEMENT, 
         3 * Float32Array.BYTES_PER_ELEMENT);
-    gl.enableVertexAttribArray(aColor);  
+    gl.enableVertexAttribArray(aColor);
+    var aNormal = gl.getAttribLocation(shaderProgram, "aNormal");
+    gl.vertexAttribPointer(aNormal, 3, gl.FLOAT, false, 
+        9 * Float32Array.BYTES_PER_ELEMENT, 
+        6 * Float32Array.BYTES_PER_ELEMENT);
 
-    var uAmbientConstant = gl.getUniformLocation(shaderProgram,"uAmbientConstant");
-    var uAmbientIntensity = gl.getUniformLocation(shaderProgram,"uAmbientIntensity");
-    gl.uniform3fv(uAmbientConstant, [1.0,1.0,1.0]);
-    gl.uniform1f(uAmbientIntensity, 0.456);
+    // Untuk pencahayaan dan pembayangan
+    var uLightConstant = gl.getUniformLocation(shaderProgram, "uLightConstant");
+    var uAmbientIntensity = gl.getUniformLocation(shaderProgram, "uAmbientIntensity");
+    gl.uniform3fv(uLightConstant, [1.0, 1.0, 1.0]);   // warna sumber cahaya: oranye
+    gl.uniform1f(uAmbientIntensity, 0.456);               // intensitas cahaya: 40%
+    var uLightPosition = gl.getUniformLocation(shaderProgram, "uLightPosition");
+    gl.uniform3fv(uLightPosition, [2.0, 0.0, 0.0]);
+    var uViewerPosition = gl.getUniformLocation(shaderProgram, "uViewerPosition");
+    gl.uniform3fv(uViewerPosition, camera);
 
     gl.drawElements(glType, indices.length, gl.UNSIGNED_SHORT, 0);
 }
@@ -396,6 +429,10 @@ const translate5 = () =>{
     gl.uniformMatrix4fv(uModel,false, model);
     gl.uniformMatrix4fv(uView, false, view);
     gl.uniformMatrix4fv(uProjection, false, perspective);
+    var uNormalModel = gl.getUniformLocation(shaderProgram, "uNormalModel");
+    var normal= mat3.create();
+    mat3.normalFromMat4(normal, model);
+    gl.uniformMatrix3fv(uNormalModel, false, normal);
 
     draw(objects[2].vertices, objects[2].indices, 0, objects[2].length, objects[2].type);
   }
@@ -408,16 +445,25 @@ const translate5 = () =>{
     gl.uniformMatrix4fv(uModel, false, modelY);
     gl.uniformMatrix4fv(uView, false, view);
     gl.uniformMatrix4fv(uProjection, false, perspective);
+    var uNormalModel = gl.getUniformLocation(shaderProgram, "uNormalModel");
+    var normalYY= mat3.create();
+    mat3.normalFromMat4(normalYY, modelY);
+    gl.uniformMatrix3fv(uNormalModel, false, normalYY);
 
     draw(objects[1].vertices, objects[1].indices, 0, objects[1].length, objects[1].type);
   }
   const kubus = () =>{
     var modelB = mat4.create(); // Membuat matriks identitas
-
     mat4.translate(modelB, modelB, [thetaY, 0, thetaZ]);
+
+
     gl.uniformMatrix4fv(uModel, false, modelB);
     gl.uniformMatrix4fv(uView, false, view);
     gl.uniformMatrix4fv(uProjection, false, perspective);
+    var uNormalModel = gl.getUniformLocation(shaderProgram, "uNormalModel");
+    var normal= mat3.create();
+    mat3.normalFromMat4(normal, modelB);
+    gl.uniformMatrix3fv(uNormalModel, false, normal);
 
     draw(objects[0].vertices, objects[0].indices, 0, objects[0].length, objects[0].type);
   }
@@ -458,7 +504,6 @@ function render() {
     gl.enable(gl.DEPTH_TEST);
     gl.clearColor(0.125, 0.125, 0.15, 1);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-
     //scale6();
     translate5();
     rotateY();
