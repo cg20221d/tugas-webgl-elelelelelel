@@ -293,8 +293,13 @@ gl.compileShader(vertexShaderObject);
 var fragmentShaderCode = `
     precision mediump float;
     varying vec3 vColor;
+    uniform vec3 uAmbientConstant;
+    uniform float uAmbientIntensity;
     void main() {
-        gl_FragColor = vec4(vColor, 1.0);
+        vec3 ambient = uAmbientConstant * uAmbientIntensity;
+        vec3 phong = ambient;
+        gl_FragColor = vec4(phong * vColor, 1.0);
+
     }
 `;
 var fragmentShaderObject = gl.createShader(gl.FRAGMENT_SHADER);
@@ -354,6 +359,11 @@ function draw(vertices, indices, start = 0, end, glType) {
         6 * Float32Array.BYTES_PER_ELEMENT, 
         3 * Float32Array.BYTES_PER_ELEMENT);
     gl.enableVertexAttribArray(aColor);  
+
+    var uAmbientConstant = gl.getUniformLocation(shaderProgram,"uAmbientConstant");
+    var uAmbientIntensity = gl.getUniformLocation(shaderProgram,"uAmbientIntensity");
+    gl.uniform3fv(uAmbientConstant, [1.0,1.0,1.0]);
+    gl.uniform1f(uAmbientIntensity, 0.456);
 
     gl.drawElements(glType, indices.length, gl.UNSIGNED_SHORT, 0);
 }
@@ -444,8 +454,8 @@ function render() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     //scale6();
-    //translate5();
-    //rotateY();
+    translate5();
+    rotateY();
     kubus();
     requestAnimationFrame(render);
 }
