@@ -368,6 +368,7 @@ function draw(vertices, indices, start = 0, end, glType) {
     gl.drawElements(glType, indices.length, gl.UNSIGNED_SHORT, 0);
 }
 var thetaX = 0.0;
+var thetaZ = 0.0;
 var thetaY = 0.0;
 var freeze = false;
 var horizontalSpeed = 0.0156;
@@ -413,9 +414,7 @@ const translate5 = () =>{
   const kubus = () =>{
     var modelB = mat4.create(); // Membuat matriks identitas
 
-    mat4.rotateY(
-        modelB, modelB, thetaY
-    );
+    mat4.translate(modelB, modelB, [thetaY, 0, thetaZ]);
     gl.uniformMatrix4fv(uModel, false, modelB);
     gl.uniformMatrix4fv(uView, false, view);
     gl.uniformMatrix4fv(uProjection, false, perspective);
@@ -424,11 +423,18 @@ const translate5 = () =>{
   }
 
 function onKeydown(event) {
-    if (event.keyCode == 37) { // Kiri
+    if (event.keyCode == 76) { // Kiri
         thetaY += 0.1
     }
-    if (event.keyCode == 39) {  // Kanan
+    if (event.keyCode == 74) {  // Kanan
         thetaY += -0.1;
+    }
+
+    if (event.keyCode == 75) { // Kiri
+        thetaZ += 0.1
+    }
+    if (event.keyCode == 73) {  // Kanan
+        thetaZ += -0.1;
     }
 
     if (event.keyCode == 38) {  // Atas
