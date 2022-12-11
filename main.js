@@ -14,28 +14,152 @@ function main() {
   //   window.addEventListener("resize", resizer);
 
   // var vertices = [x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6];
-  var vertices1 = [-0.8, -0.8, -0.8, 0.8, -0.6, -0.8, -0.6, -0.8, -0.8, 0.8, -0.6, 0.8];
-  var vertices2 = [-0.6, 0, -0.6, 0.8, -0.4, 0, -0.4, 0, -0.6, 0.8, -0.4, 0.8];
-  var vertices3 = [-0.5, -0.8, -0.6, 0, -0.4, -0.8, -0.4, -0.8, -0.6, 0, -0.5, 0];
-  var vertices4 = [-0.2, -0.8, -0.2, 0.8, -0, -0.8, 0, -0.8, -0.2, 0.8, 0, 0.8];
-  var vertices5 = [0.5, 0.8,
-    0.1, 0.8,
-     0.1, 0, 
-     0.5, 0.0, 
-     0.5, -0.8, 
-     0.1, -0.8
-    ];
-  // var vertices6 = [0.4, -0.8, 0.4, 0, 0.5, -0.8, 0.5, -0.8, 0.4, 0, 0.5, 0];
-  // var vertices7 = [0.1, -0.8, 0.1, -0.7, 0.5, -0.8, 0.5, -0.8, 0.1, -0.7, 0.5, -0.7];
-  var vertices6 = [0.95, 0.8,
-  0.6, 0.8,
-  0.6, -0.8,
-  0.95, -0.8,
-  0.95, 0,
-  0.6, 0, 
+  var vertices1 = [ 
+    -0.8,  -0.5, 
+    -0.75, -0.5,
+    -0.8,   0.5,
 
- ];
+    -0.75,  0.5,
+    -0.8,   0.5,
+    -0.75, -0.5, 
 
+    -0.8,  -0.5, 
+    -0.8,  -0.43,
+    -0.35, -0.5,
+
+    -0.35, -0.43,
+    -0.8,  -0.43,
+    -0.35, -0.5,
+
+    -0.8,  0.08, 
+    -0.8,  0.01,
+    -0.35, 0.08,
+
+    -0.35, 0.01,
+    -0.8,  0.01,
+    -0.35, 0.08,
+    
+    -0.35, 0.08,
+    -0.4, 0.08,
+    -0.4,-0.5,
+
+    -0.35, 0.08,
+    -0.35, -0.5,
+    -0.4,-0.5,
+
+    -0.47, 0.08,
+    -0.47, 0.5,
+    -0.42,0.08,
+
+    -0.47, 0.5,
+    -0.42, 0.5,
+    -0.42,0.08,
+
+    -0.42, 0.5,
+    -0.8, 0.43,
+    -0.8, 0.5,
+
+    -0.42, 0.5,
+    -0.8, 0.43,
+    -0.42, 0.43,
+
+    0,     -0.5, 
+    -0.05, -0.5,
+     0,     0.13,
+
+    -0.05,  0.13,
+     0,     0.13,
+    -0.05, -0.5, 
+    
+    -0.3,    0.5,
+    -0.23,   0.5, 
+    -0,      0.1,
+
+    -0.3,    0.5,
+    -0,      0.1,
+    -0,      0,
+
+    0.25,    0.5,
+    0.18,   0.5, 
+    -0.05,      0.1,
+
+     0.25,    0.5,
+    -0.05,      0.1,
+    -0.05,      0,
+
+     0.3,  -0.5, 
+     0.6, -0.5,
+
+     0.6, -0.5,
+     0.6, 0.05,
+
+     0.6, 0.05,
+     0.35, 0.05,
+
+     0.35, 0.05,
+     0.35, 0.4,
+
+     0.35, 0.4,
+     0.6, 0.4,
+
+     0.6, 0.4,
+     0.6, 0.5,
+
+     0.6, 0.5,
+     0.3, 0.5,
+
+     0.3, 0.5,
+     0.3, -0.05,
+
+     0.3, -0.05,
+     0.55, -0.05,
+
+     0.55, -0.05,
+     0.55, -0.4,
+
+     0.55, -0.4,
+     0.3, -0.4,
+
+     0.3, -0.4,
+     0.3, -0.5,
+
+     0.65, -0.5,
+     0.65, 0.5,
+
+     0.65, 0.5,
+     0.95, 0.5,
+
+     0.95, 0.5,
+     0.95, 0.4,
+   
+     0.95, 0.4,
+     0.70, 0.4,
+
+     0.70, 0.4,
+     0.70, 0.05,
+
+     0.70, 0.05,
+     0.95, 0.05,
+
+     0.95, 0.05,
+     0.95, -0.5,
+
+     0.95, -0.5,
+     0.65, -0.5,
+
+     0.7, -0.05,
+     0.9, -0.05,
+
+     0.9, -0.05,
+     0.9, -0.4,
+
+     0.9, -0.4,
+     0.7, -0.4,
+
+     0.7, -0.4,
+     0.7, -0.05,
+
+  ];
   // buffer itu kayak pointernya. lokasi yg di gpu nya disimpan di buffer (?, cmiiw)
   var buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -98,29 +222,6 @@ function main() {
   // gl.drawArrays(gl.LINES_LOOP, 0, 3);
   // klo LINES_LOOP, 1 garis dari A ke B, 1 Garis lagi dari B ke C, 1 garis lagi dari C ke A, dia nge loop
   // gl.drawArrays(gl.TRIANGLES, 0, 4);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
-
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices2), gl.STATIC_DRAW);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
-
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices3), gl.STATIC_DRAW);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
-
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices4), gl.STATIC_DRAW);
-  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 6);
-
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices5), gl.STATIC_DRAW);
-  gl.drawArrays(gl.LINE_STRIP, 0, 6);
-
-  // gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices6), gl.STATIC_DRAW);
-  // gl.drawArrays(gl.LINE_STRIP, 0, 6);
-
-  // gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices7), gl.STATIC_DRAW);
-  // gl.drawArrays(gl.LINE_STRIP, 0, 6);
-
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices6), gl.STATIC_DRAW);
-  gl.drawArrays(gl.LINE_STRIP, 0, 6);
-  // TRIANGLE_STRIP -> 1 segitiga ABC, BCD
-  // gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
-  // TRIANGLE_FAN
+  gl.drawArrays(gl.TRIANGLES, 0, 54);
+  gl.drawArrays(gl.LINES, 54, 54);
 }
